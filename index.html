@@ -11,20 +11,24 @@
   <div class="row">
     <div class="col">
       <h1 class="text-center">Welcome to XO game</h1>
-      <p class="text-center">please enter the names of the players</p>
         <form action="" onsubmit="return false" id="info-form">
             <div class="form-group">
+                <p class="text-center">please enter the names of the players</p>
+            </div>
+            <div class="form-group py-1">
                 <label for="player1_name">player 2 name :</label>
-                <input class="form-control" type="text" name="player1_name" id="player1_name">
+                <input class="form-control py-1" type="text" name="player1_name" id="player1_name">
             </div>
-            <div class="form-group">
+            <div class="form-group py-1">
                 <label for="player2_name"> Player 2 name :</label>
-                <input class="form-control" type="text" name="player2_name" id="player2_name">
+                <input class="form-control py-1" type="text" name="player2_name" id="player2_name">
             </div>
-            <button id="start-btn">Start</button>
+            <button id="start-btn" class="btn btn-primary mt-1 w-100">Start</button>
         </form>
     </div>
   </div>
+    <h2 id="bottom-msg" class="text-center text-primary">
+    </h2>
   <div class="row grid">
      <div class="row">
         <div class="col container-fluid p-5">
@@ -43,16 +47,17 @@
             <div class="cell col-4"><div class="cell-content" data-row="3" data-col="2"></div></div>
             <div class="cell col-4"><div class="cell-content" data-row="3" data-col="3"></div></div>
           </div>
+            <div class="row">
+                <div class="col">
+                    <button id="reset-btn" class="btn btn-primary w-100 mt-5">
+                        reset
+                    </button>
+                </div>
+            </div>
    </div>
 
     </div>
-  <h2 id="bottom-msg">
-
-  </h2>
-  <button id="reset-btn">
-    reset
-  </button>
-</div>
+ </div>
 </div>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/xo.js"></script>

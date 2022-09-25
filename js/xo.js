@@ -11,7 +11,7 @@ const reset=()=>{
     activePLayer=1;
     grid.style.display='none';
     document.getElementById('info-form').style.display='block';
-
+    document.getElementById('bottom-msg').innerText='';
 }
 const grid=document.getElementsByClassName('grid')[0];
 const getFirstPlayerName=()=>{
@@ -36,7 +36,7 @@ const isWin=()=>{
         if(
             (gridVlaues[0][0]==gridVlaues[1][0] && gridVlaues[1][0]==gridVlaues[2][0] && gridVlaues[2][0]!=EMPTY_CELL_VALUE )
             || (gridVlaues[0][1]==gridVlaues[1][1]&& gridVlaues[1][1]==gridVlaues[2][1] &&gridVlaues[2][1]!=EMPTY_CELL_VALUE )
-            || (gridVlaues[2][2]==gridVlaues[2][2]&& gridVlaues[2][2]==gridVlaues[2][2] && gridVlaues[2][2] &&gridVlaues[2][2]!=EMPTY_CELL_VALUE )
+            || (gridVlaues[0][2]==gridVlaues[1][2]&& gridVlaues[0][2]==gridVlaues[2][2] && gridVlaues[2][2] !=EMPTY_CELL_VALUE )
         )
             return true;
         if( (gridVlaues[0][0]==gridVlaues[1][1] &&gridVlaues[1][1] ==gridVlaues[2][2] && gridVlaues[2][2]!=EMPTY_CELL_VALUE)
@@ -46,20 +46,20 @@ const isWin=()=>{
 
             return false;
     }
-
-
 const announceWinner=()=>{
     console.log("the winner is "+activePLayer==PLAYER_1_VALUE?getFirstPlayerName():getSecondPlayerName())
     document.getElementById('bottom-msg').innerText='The winner is '+(activePLayer==PLAYER_1_VALUE?getFirstPlayerName():getSecondPlayerName());
 }
 const colorCell=(cell)=>{
     cell.innerText=activePLayer==PLAYER_1_VALUE?'X':'O';
+    console.table(gridVlaues);
 }
-document.querySelectorAll('.cell-content');
 document.querySelectorAll('.cell-content').forEach(el=>el.addEventListener('click',(e)=>{
     console.log('row:'+e.target.dataset.row+' col:'+e.target.dataset.col);
-    if(isPlaying) {
-        gridVlaues[e.target.dataset.row - 1][e.target.dataset.col - 1] = activePLayer;
+    const cellRow=e.target.dataset.row - 1;
+    const cellCol=e.target.dataset.col - 1;
+    if(isPlaying && gridVlaues[cellRow][cellCol]==0) {
+        gridVlaues[cellRow][cellCol] = activePLayer;
         colorCell(e.target);
         if (!isWin()) {
             console.log('switch player')
@@ -80,7 +80,4 @@ document.getElementById('start-btn').addEventListener('click',()=>{
     grid.style.display='block';
 })
 document.getElementById('reset-btn').addEventListener('click',reset)
-
-grid.style.display='none';
-
-
+reset();
