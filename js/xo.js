@@ -12,6 +12,7 @@ const reset=()=>{
     grid.style.display='none';
     document.getElementById('info-form').style.display='block';
     document.getElementById('bottom-msg').innerText='';
+    document.querySelectorAll('.cell-content').forEach(el=>el.innerHTML='')
 }
 const grid=document.getElementsByClassName('grid')[0];
 const getFirstPlayerName=()=>{
