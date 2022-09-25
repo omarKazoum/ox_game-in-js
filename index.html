@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xo_Game</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center">Welcome to XO game</h1>
+      <p class="text-center">please enter the names of the players</p>
+        <form action="" onsubmit="return false" id="info-form">
+            <div class="form-group">
+                <label for="player1_name">player 2 name :</label>
+                <input class="form-control" type="text" name="player1_name" id="player1_name">
+            </div>
+            <div class="form-group">
+                <label for="player2_name"> Player 2 name :</label>
+                <input class="form-control" type="text" name="player2_name" id="player2_name">
+            </div>
+            <button id="start-btn">Start</button>
+        </form>
+    </div>
+  </div>
+  <div class="row grid">
+     <div class="row">
+        <div class="col container-fluid p-5">
+          <div class="row mb-2">
+            <div class="cell col-4"><div class="cell-content" data-row="1" data-col="1"></div></div>
+            <div class="cell col-4"><div class="cell-content" data-row="1" data-col="2"></div></div>
+            <div class="cell col-4"><div class="cell-content" data-row="1" data-col="3"></div></div>
+          </div>
+            <div class="row mb-2">
+            <div class="cell col-4"><div class="cell-content" data-row="2" data-col="1"></div></div>
+            <div class="cell col-4"><div class="cell-content" data-row="2" data-col="2"></div></div>
+            <div class="cell col-4"><div class="cell-content" data-row="2" data-col="3"></div></div>
+          </div>
+            <div class="row">
+            <div class="cell col-4"><div class="cell-content" data-row="3" data-col="1"></div></div>
+            <div class="cell col-4"><div class="cell-content" data-row="3" data-col="2"></div></div>
+            <div class="cell col-4"><div class="cell-content" data-row="3" data-col="3"></div></div>
+          </div>
+   </div>
+
+    </div>
+  <h2 id="bottom-msg">
+
+  </h2>
+  <button id="reset-btn">
+    reset
+  </button>
+</div>
+</div>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/xo.js"></script>
+</body>
+</html>

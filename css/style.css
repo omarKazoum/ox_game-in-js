@@ -1,0 +1,12 @@
+.cell > * {
+    border: 5px #19aec2 solid;
+    background: black;
+    border-radius: 15px;
+    height: 50px;
+    padding-bottom:10px;
+    color: #19aec2;
+    text-align: center;
+    font-size: 30px;
+    vertical-align: middle;
+}
+
